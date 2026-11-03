@@ -1,0 +1,13 @@
+# Showcase fork only (never part of an upstream pull request).
+version: 1
+app:
+  install: "npm ci && npm run build"
+  start: npm run start -w web -- --port {port} --host 0.0.0.0
+  url: http://localhost:{port}
+  readyPath: /web-ide/
+  runtime: node24
+  env:
+    NODE_ENV: development
+demo:
+  maxVideos: 1
+  beforePass: true
